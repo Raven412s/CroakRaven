@@ -1,0 +1,40 @@
+import { Headphones, ThumbsUp } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from './ui/button'
+import { SidebarTrigger } from './ui/sidebar'
+import { cn } from '@/lib/utils'
+
+
+export function PageHeader({
+    title,
+    className
+}: {
+    title: string,
+    className?: string
+}) {
+    return (
+        <div className={cn(
+            "flex items-center justify-between border-b p-4",
+            className
+        )}>
+            <div className="flex items-center gap-2">
+                <SidebarTrigger />
+                <h1 className='text-lg font-semibold tracking-tight'>{title}</h1>
+            </div>
+            <div className="flex items-center gap-3">
+                <Button variant={"outline"} size={"sm"} asChild>
+                    <Link href={"mailto:being.ashutosh16.20@gmail.com"}>
+                        <ThumbsUp className='' />
+                        <span className='hidden lg:block'>Feedback</span>
+                    </Link>
+                </Button>
+                <Button variant={"outline"} size={"sm"} asChild>
+                    <Link href={"mailto:being.ashutosh16.20@gmail.com"}>
+                        <Headphones className='' />
+                        <span className='hidden lg:block'>Need Help?</span>
+                    </Link>
+                </Button>
+            </div>
+        </div>
+    )
+}
