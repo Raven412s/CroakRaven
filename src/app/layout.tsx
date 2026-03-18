@@ -16,8 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Resonate",
+  title: {
+    default:"CroakRaven",
+    template: `%s | CroakRaven`
+  },
   description: "Elevenlabs clone for free usage in my youtube videos.",
+  icons:{
+    icon: "/Logo.svg"
+  }
 };
 
 export default function RootLayout({
